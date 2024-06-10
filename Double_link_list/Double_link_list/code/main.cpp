@@ -16,7 +16,7 @@ int main()
 
 	Delete(list , 3);
 	Delete(list , 6);
-	Delete(list , 4);
+	Delete(list , 2);
 	Printlist(list);
 
 	return 0;
