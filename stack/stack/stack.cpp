@@ -16,6 +16,9 @@ Stack* Initstack(void)
     return stack;
 }
 
+/**
+ *  入栈判断，函数内联不做声明
+ */
 static inline int Isempty(Stack* stack)
 {
     if(stack != NULL)
