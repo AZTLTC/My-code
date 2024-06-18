@@ -20,3 +20,5 @@ void Printlist(Node* list);
 void Tailinsert(Node* list , int data);
 int Delete(Node* list , int data);
 
+
+//双链表
