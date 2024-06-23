@@ -91,7 +91,7 @@ void String_KMP(String* string , String* substring)
         return ;
     }
     printf("KMP fail\n");
-
+    delete []next;
 }
 
 static inline void string_print_next(int* next , int len)
