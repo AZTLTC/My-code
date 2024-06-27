@@ -1,27 +1,23 @@
 #include "BinarySearchTree.h"
 
-Tree* Tree_init(void)
+static inline Node* Tree_create(int data)
 {
-    Tree* tree = (Tree*)malloc(sizeof(Tree));
+    Node* node = (Node*)malloc(sizeof(Node));  //(Node*)malloc(sizeof(Node));
 
-    if(tree == NULL)
+    if(node == NULL)
     {
         printf("Tree malloc fail!\n");
         exit(0);
     }
 
-    tree -> root = (Node*)malloc(sizeof(Node));
+    node -> data = data;
+    node -> left = NULL;
+    node -> right = NULL;
 
-    if(tree -> root == NULL)
-    {
-        printf("Tree -> root malloc fail!\n");
-        return 0;
-    }
-
-    tree -> root = NULL;
-
-    return tree;
+    return node;
 }
+
+// static inline void 
 
 Node* Tree_bst(Node* node , int data)
 {
@@ -44,43 +40,48 @@ Node* Tree_bst(Node* node , int data)
     }
 }
 
-void Tree_bst_insert(Node** node , int data)
+Node* Tree_bst_insert(Node* node , int data)
 {
-    if(*node == NULL)
+    if(node == NULL)
     {
-        *node = (Node*)malloc(sizeof(Node));
-        if(*node == NULL)
-        {
-            return;
-        }
-        (*node) -> data = data;
-        (*node) -> left = NULL;
-        (*node) -> right = NULL;
+        return Tree_create(data);
     }
     
-    if(data == (*node) -> data)
+    if(node -> data == data)
     {
-        return;
-    }
-
-    if(data < (*node) -> data)
-    {
-        Tree_bst_insert(&((*node) -> left) , data);
+        return NULL;
     }
     else
     {
-        Tree_bst_insert(&((*node) -> right) , data);
+        if(data < node -> data)
+        {
+            node -> left = Tree_bst_insert(node -> left , data);
+        }
+        else if(data > node -> data)
+        {
+            node -> right = Tree_bst_insert(node -> right , data);
+        }
     }
+    return node;
 }
 
 void Tree_print(Node* node)
 {
     if(node != NULL)
     {
+        Tree_print(node->left);
         printf("%d " , node -> data);
-        Tree_print(node -> left);
         Tree_print(node -> right);
     }
     return ;
+}
+
+void Tree_founddata(Node* node) 
+{
+    if (node != NULL) {
+        printf("找到的数据: %d\n", node->data);
+    } else {
+        printf("没有找到数据\n");
+    }
 }
 

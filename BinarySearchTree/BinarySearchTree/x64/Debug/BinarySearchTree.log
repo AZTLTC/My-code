@@ -1,5 +1,3 @@
 ﻿  BinarySearchTree.cpp
-  main.cpp
-  正在生成代码...
-C:\Users\_K\Desktop\my code\BinarySearchTree\BinarySearchTree\BinarySearchTree.cpp(45,1): warning C4715: “Tree_bst”: 不是所有的控件路径都返回值
+C:\Users\_K\Desktop\my code\BinarySearchTree\BinarySearchTree\BinarySearchTree.cpp(41): warning C4715: “Tree_bst”: 不是所有的控件路径都返回值
   BinarySearchTree.vcxproj -> C:\Users\_K\Desktop\my code\BinarySearchTree\x64\Debug\BinarySearchTree.exe

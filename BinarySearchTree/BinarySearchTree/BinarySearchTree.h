@@ -11,13 +11,9 @@ typedef struct Node
     struct Node* right;
 }Node;
 
-typedef struct Tree
-{
-    Node* root;
-}Tree;
-
-Tree* Tree_init(void);
+// Node* Tree_creat(int data);
 Node* Tree_bst(Node* node , int data);
-void Tree_bst_insert(Node** node , int data);
+Node* Tree_bst_insert(Node* node, int data);
 void Tree_print(Node* node);
+void Tree_founddata(Node* node);
 
